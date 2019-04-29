@@ -27,9 +27,4 @@ for game in games_collection.find({"date": {"$gt": start_date}}).sort("date"):
     duplicates += 1
     print(gd2_id)
     print("Duplicates: " + str(duplicates))
-    # games_collection.delete_one({"gd2_id": gd2_id})
-
-
-#for key, value in found_gd2_ids.items():
-#   game = games_collection.find_one({"gd2_id": key})
-#   games_collection.delete_one({"_id": game["_id"]})
+    games_collection.delete_one({"gd2_id": gd2_id})
